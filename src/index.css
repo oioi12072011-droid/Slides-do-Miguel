@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --color-primary: #00f6ff;
+  --color-background-light: #f5f8f8;
+  --color-background-dark: #0f2223;
+  --color-accent-dark: #163032;
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border-color: var(--border-color);
+}
+
+@layer base {
+  :root {
+    --bg-primary: #0D1117;
+    --bg-secondary: #0f2223;
+    --bg-tertiary: #163032;
+    --accent: #00F5FF;
+    --accent-hover: #00c2cc;
+    --text-primary: #E6EDF3;
+    --text-secondary: #8b949e;
+    --border-color: rgba(0, 245, 255, 0.2);
+  }
+
+  .theme-cyber-red {
+    --bg-primary: #1a0505;
+    --bg-secondary: #2a0808;
+    --bg-tertiary: #3a0b0b;
+    --accent: #ff3333;
+    --accent-hover: #cc0000;
+    --text-primary: #f3e6e6;
+    --text-secondary: #9e8b8b;
+    --border-color: rgba(255, 51, 51, 0.2);
+  }
+
+  .theme-cyber-purple {
+    --bg-primary: #12051a;
+    --bg-secondary: #1d082a;
+    --bg-tertiary: #280b3a;
+    --accent: #b026ff;
+    --accent-hover: #8c1ecc;
+    --text-primary: #efe6f3;
+    --text-secondary: #958b9e;
+    --border-color: rgba(176, 38, 255, 0.2);
+  }
+
+  .theme-matrix-clean {
+    --bg-primary: #051a0b;
+    --bg-secondary: #082a12;
+    --bg-tertiary: #0b3a19;
+    --accent: #00ff41;
+    --accent-hover: #00cc34;
+    --text-primary: #e6f3e8;
+    --text-secondary: #8b9e90;
+    --border-color: rgba(0, 255, 65, 0.2);
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary font-display antialiased overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(400%);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse-slower {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes quantum-pulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: blur(2px);
+  }
+}
+
+.anim-fadeIn {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.anim-slideUp {
+  animation: slideUp 0.8s ease forwards;
+}
+
+.anim-slideLeft {
+  animation: slideLeft 0.8s ease forwards;
+}
+
+.anim-zoomIn {
+  animation: zoomIn 0.8s ease forwards;
+}
+
+.anim-rotateIn {
+  animation: rotateIn 0.8s ease forwards;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-spin-reverse-slower {
+  animation: spin-reverse-slower 12s linear infinite;
+}
+
+.animate-quantum-pulse {
+  animation: quantum-pulse 4s ease-in-out infinite;
+}
