@@ -183,7 +183,7 @@ export function Viewer() {
           className="flex items-center gap-2 px-8 py-2.5 rounded-lg bg-accent text-bg-primary font-bold hover:brightness-110 transition-all shadow-lg shadow-accent/20"
         >
           <PlayCircle size={20} />
-          <span className="text-sm">Present</span>
+          <span className="text-sm">Apresentar</span>
         </button>
       </header>
 
@@ -301,8 +301,8 @@ export function Viewer() {
                   key={i}
                   onClick={() => setActiveSlideIndex(i)}
                   className={`w-7 h-7 rounded-md font-bold text-[10px] flex items-center justify-center transition-all ${i === activeSlideIndex
-                      ? 'bg-accent text-bg-primary shadow-[0_0_15px_rgba(34,211,238,0.4)] scale-110'
-                      : 'bg-white/10 text-text-secondary hover:bg-white/20'
+                    ? 'bg-accent text-bg-primary shadow-[0_0_15px_rgba(34,211,238,0.4)] scale-110'
+                    : 'bg-white/10 text-text-secondary hover:bg-white/20'
                     }`}
                 >
                   {i + 1}

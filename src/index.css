@@ -64,6 +64,12 @@
   body {
     @apply bg-bg-primary text-text-primary font-display antialiased overflow-hidden;
   }
+
+  /* Force hide cursor on all interactable elements when custom cursor is active */
+  body.custom-cursor-active,
+  body.custom-cursor-active * {
+    cursor: none !important;
+  }
 }
 
 @layer utilities {
@@ -234,4 +240,45 @@
 
 .animate-quantum-pulse {
   animation: quantum-pulse 4s ease-in-out infinite;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip-path: inset(10% 0 10% 0);
+    transform: translate(-5px, 0);
+    opacity: 1;
+    filter: contrast(120%) brightness(120%);
+  }
+
+  20% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(5px, 0);
+  }
+
+  40% {
+    clip-path: inset(30% 0 40% 0);
+    transform: translate(-5px, 0);
+  }
+
+  60% {
+    clip-path: inset(50% 0 20% 0);
+    transform: translate(5px, 0);
+    filter: hue-rotate(90deg);
+  }
+
+  80% {
+    clip-path: inset(5% 0 80% 0);
+    transform: translate(-5px, 0);
+  }
+
+  100% {
+    clip-path: inset(50% 0 50% 0);
+    transform: translate(0, 0);
+    opacity: 0;
+    filter: none;
+  }
+}
+
+.glitch-anim {
+  animation: glitch-anim 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }

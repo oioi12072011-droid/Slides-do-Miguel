@@ -433,7 +433,7 @@ export function Home() {
                 </div>
                 <div className="p-4 border-l-2 border-accent/20 bg-white/5 hover:bg-white/10 transition-colors rounded-r">
                   <p className="text-[10px] uppercase tracking-widest text-accent/60">Membros da Equipe</p>
-                  <p className="text-xl font-bold text-text-primary">{chartMetrics.totalMembers} <span className="text-xs font-normal opacity-50">USERS</span></p>
+                  <p className="text-xl font-bold text-text-primary">{chartMetrics.totalMembers} <span className="text-xs font-normal opacity-50">USUÁRIOS</span></p>
                 </div>
                 <div className="p-4 border-l-2 border-accent/20 bg-white/5 hover:bg-white/10 transition-colors rounded-r">
                   <p className="text-[10px] uppercase tracking-widest text-accent/60">Última Edição</p>

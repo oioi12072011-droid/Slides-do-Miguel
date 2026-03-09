@@ -16,7 +16,9 @@ import { PresentationProvider } from './contexts/PresentationContext';
 import { TeamsProvider } from './contexts/TeamsContext';
 import { AssetsProvider } from './contexts/AssetsContext';
 import { ModalProvider } from './contexts/ModalContext';
+import { UIPreferencesProvider } from './contexts/UIPreferencesContext';
 import { PremiumModal } from './components/PremiumModal';
+import { GlobalUIElements } from './components/GlobalUIElements';
 
 const RoleProtectedRoute = ({ children, allowedRoles }: { children: React.ReactNode, allowedRoles: string[] }) => {
   const { user, loading } = useAuth();
@@ -38,63 +40,66 @@ export default function App() {
   return (
     <AuthProvider>
       <ThemeProvider>
-        <ModalProvider>
-          <PresentationProvider>
-            <TeamsProvider>
-              <AssetsProvider>
-                <Router>
-                  <Routes>
+        <UIPreferencesProvider>
+          <ModalProvider>
+            <PresentationProvider>
+              <TeamsProvider>
+                <AssetsProvider>
+                  <Router>
+                    <GlobalUIElements />
+                    <Routes>
 
-                    <Route path="/" element={<Home />} />
-                    <Route path="/presentation/:id" element={<Viewer />} />
-                    <Route path="/present/:id" element={<FullscreenPresentation />} />
-                    <Route path="/admin/login" element={<AdminLogin />} />
-                    <Route path="/access" element={<TeamLogin />} />
-                    <Route path="/settings" element={<Settings />} />
-                    <Route
-                      path="/my-slides"
-                      element={<RoleProtectedRoute allowedRoles={['admin', 'editor']}><MySlides /></RoleProtectedRoute>}
-                    />
-                    <Route
-                      path="/assets"
-                      element={<RoleProtectedRoute allowedRoles={['admin', 'editor']}><Assets /></RoleProtectedRoute>}
-                    />
-                    <Route
-                      path="/projects"
-                      element={<RoleProtectedRoute allowedRoles={['admin', 'editor']}><MySlides /></RoleProtectedRoute>}
-                    />
-                    <Route
-                      path="/favorites"
-                      element={<RoleProtectedRoute allowedRoles={['admin', 'editor']}><Assets /></RoleProtectedRoute>}
-                    />
-                    <Route
-                      path="/editor/:id"
-                      element={
-                        <RoleProtectedRoute allowedRoles={['admin', 'editor']}>
-                          <VisualEditor />
-                        </RoleProtectedRoute>
-                      }
-                    />
-                    <Route
-                      path="/teams"
-                      element={<RoleProtectedRoute allowedRoles={['admin']}><Teams /></RoleProtectedRoute>}
-                    />
-                    <Route
-                      path="/admin/settings"
-                      element={
-                        <RoleProtectedRoute allowedRoles={['admin']}>
-                          <Settings />
-                        </RoleProtectedRoute>
-                      }
-                    />
-                    <Route path="/category/:id" element={<Home />} />
-                  </Routes>
-                </Router>
-                <PremiumModal />
-              </AssetsProvider>
-            </TeamsProvider>
-          </PresentationProvider>
-        </ModalProvider>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/presentation/:id" element={<Viewer />} />
+                      <Route path="/present/:id" element={<FullscreenPresentation />} />
+                      <Route path="/admin/login" element={<AdminLogin />} />
+                      <Route path="/access" element={<TeamLogin />} />
+                      <Route path="/settings" element={<Settings />} />
+                      <Route
+                        path="/my-slides"
+                        element={<RoleProtectedRoute allowedRoles={['admin', 'editor']}><MySlides /></RoleProtectedRoute>}
+                      />
+                      <Route
+                        path="/assets"
+                        element={<RoleProtectedRoute allowedRoles={['admin', 'editor']}><Assets /></RoleProtectedRoute>}
+                      />
+                      <Route
+                        path="/projects"
+                        element={<RoleProtectedRoute allowedRoles={['admin', 'editor']}><MySlides /></RoleProtectedRoute>}
+                      />
+                      <Route
+                        path="/favorites"
+                        element={<RoleProtectedRoute allowedRoles={['admin', 'editor']}><Assets /></RoleProtectedRoute>}
+                      />
+                      <Route
+                        path="/editor/:id"
+                        element={
+                          <RoleProtectedRoute allowedRoles={['admin', 'editor']}>
+                            <VisualEditor />
+                          </RoleProtectedRoute>
+                        }
+                      />
+                      <Route
+                        path="/teams"
+                        element={<RoleProtectedRoute allowedRoles={['admin']}><Teams /></RoleProtectedRoute>}
+                      />
+                      <Route
+                        path="/admin/settings"
+                        element={
+                          <RoleProtectedRoute allowedRoles={['admin']}>
+                            <Settings />
+                          </RoleProtectedRoute>
+                        }
+                      />
+                      <Route path="/category/:id" element={<Home />} />
+                    </Routes>
+                  </Router>
+                  <PremiumModal />
+                </AssetsProvider>
+              </TeamsProvider>
+            </PresentationProvider>
+          </ModalProvider>
+        </UIPreferencesProvider>
       </ThemeProvider>
     </AuthProvider>
   );

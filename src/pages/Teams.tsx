@@ -55,7 +55,7 @@ export function Teams() {
         <div className="flex h-screen w-full overflow-hidden bg-bg-primary">
             <Sidebar />
             <main className="flex-1 flex flex-col h-full overflow-y-auto custom-scrollbar">
-                <Header title="Teams" />
+                <Header title="Equipes" />
 
                 <div className="p-6 lg:p-10 max-w-7xl mx-auto w-full space-y-8">
                     {/* Header */}
@@ -126,7 +126,7 @@ export function Teams() {
                                                     </td>
                                                     <td className="px-6 py-4">
                                                         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${ROLE_STYLES[member.role]}`}>
-                                                            {member.role}
+                                                            {member.role === 'Viewer' ? 'Visualizador' : member.role}
                                                         </span>
                                                     </td>
                                                     <td className="px-6 py-4">
@@ -168,7 +168,7 @@ export function Teams() {
                                                                         className={`w-full text-left px-4 py-2 text-sm hover:bg-accent/10 transition-colors flex items-center gap-2 ${member.role === role ? 'text-accent' : 'text-text-primary'}`}
                                                                     >
                                                                         <Shield size={14} />
-                                                                        {role} {member.role === role && '✓'}
+                                                                        {role === 'Viewer' ? 'Visualizador' : role} {member.role === role && '✓'}
                                                                     </button>
                                                                 ))}
                                                                 <div className="border-t border-border-color my-1"></div>
@@ -251,9 +251,9 @@ export function Teams() {
                                             onChange={(e) => setInviteRole(e.target.value as any)}
                                             className="w-full bg-bg-primary border border-border-color rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-accent text-text-primary"
                                         >
-                                            <option value="Viewer">Viewer</option>
+                                            <option value="Viewer">Visualizador</option>
                                             <option value="Editor">Editor</option>
-                                            <option value="Admin">Admin</option>
+                                            <option value="Admin">Administrador</option>
                                         </select>
                                     </div>
                                     <button

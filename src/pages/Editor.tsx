@@ -245,7 +245,7 @@ export function VisualEditor() {
       <div className="h-screen w-full flex flex-col items-center justify-center bg-bg-secondary text-accent gap-6">
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 border-4 border-accent/20 border-t-accent rounded-full animate-spin"></div>
-          <h2 className="text-xl font-bold tracking-widest uppercase">Loading Engine...</h2>
+          <h2 className="text-xl font-bold tracking-widest uppercase">Carregando Mecanismo...</h2>
         </div>
 
         {loadError && (
@@ -569,7 +569,7 @@ export function VisualEditor() {
             }}
             className="flex items-center gap-2 px-4 py-2 rounded-lg bg-bg-tertiary text-white border border-border-color hover:bg-bg-tertiary/80 transition-colors text-sm font-bold ml-2"
           >
-            <Play size={16} fill="white" /> Present
+            <Play size={16} fill="white" /> Apresentar
           </button>
           <button
             onClick={handleSave}
@@ -581,7 +581,7 @@ export function VisualEditor() {
             ) : saveStatus === 'saved' ? (
               <span className="flex items-center gap-2">Salvo!</span>
             ) : (
-              'Save Project'
+              'Salvar Projeto'
             )}
           </button>
         </div>
@@ -605,36 +605,35 @@ export function VisualEditor() {
             </button>
 
             <div className="h-px bg-bg-tertiary w-full my-2"></div>
-
-            <h3 className="text-[10px] font-bold text-accent uppercase tracking-widest mb-4">Add Elements</h3>
+            <h3 className="text-[10px] font-bold text-accent uppercase tracking-widest mb-4">Adicionar Elementos</h3>
             <div className="grid grid-cols-2 gap-3">
               <button
                 onClick={handleAddText}
                 className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-bg-tertiary/50 border border-border-color hover:border-accent/50 transition-colors group"
               >
                 <Type className="text-accent group-hover:scale-110 transition-transform" size={24} />
-                <span className="text-xs font-bold text-white">Text</span>
+                <span className="text-xs font-bold text-white">Texto</span>
               </button>
               <button
                 onClick={handleAddMedia}
                 className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-bg-tertiary/50 border border-border-color hover:border-accent/50 transition-colors group"
               >
                 <ImageIcon className="text-accent group-hover:scale-110 transition-transform" size={24} />
-                <span className="text-xs font-bold text-white">Media</span>
+                <span className="text-xs font-bold text-white">Mídia</span>
               </button>
               <button
                 onClick={handleAddShape}
                 className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-bg-tertiary/50 border border-border-color hover:border-accent/50 transition-colors group"
               >
                 <Triangle className="text-accent group-hover:scale-110 transition-transform" size={24} fill="currentColor" />
-                <span className="text-xs font-bold text-white">Shapes</span>
+                <span className="text-xs font-bold text-white">Formas</span>
               </button>
               <button
                 onClick={handleAddHTML}
                 className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-bg-tertiary/50 border border-border-color hover:border-accent/50 transition-colors group"
               >
                 <Settings className="text-accent group-hover:scale-110 transition-transform" size={24} />
-                <span className="text-xs font-bold text-white">HTML/Code</span>
+                <span className="text-xs font-bold text-white">HTML/Código</span>
               </button>
             </div>
 
@@ -698,7 +697,7 @@ export function VisualEditor() {
 
           <div className="flex-1 flex flex-col border-t border-border-color min-h-0">
             <div className="p-6 pb-2 flex items-center justify-between">
-              <h3 className="text-[10px] font-bold text-accent uppercase tracking-widest">Layers</h3>
+              <h3 className="text-[10px] font-bold text-accent uppercase tracking-widest">Camadas</h3>
               <button className="text-slate-400 hover:text-white"><Filter size={14} /></button>
             </div>
             <div className="flex-1 overflow-y-auto custom-scrollbar px-4 space-y-1">
@@ -714,9 +713,9 @@ export function VisualEditor() {
                         el.type === 'shape' ? <Triangle size={16} /> :
                           <ImageIcon size={16} />}
                     <span className="text-xs font-bold truncate w-32">
-                      {el.type === 'html' ? 'Code Snippet' :
-                        el.type === 'image' ? 'Image Element' :
-                          el.type === 'shape' ? 'Shape Element' :
+                      {el.type === 'html' ? 'Trecho de Código' :
+                        el.type === 'image' ? 'Elemento de Imagem' :
+                          el.type === 'shape' ? 'Elemento de Forma' :
                             el.content}
                     </span>
                   </div>
@@ -764,7 +763,7 @@ export function VisualEditor() {
             <button
               onClick={() => setZoom(85)}
               className="text-slate-400 hover:text-accent transition-colors"
-              title="Reset Zoom"
+              title="Redefinir Zoom"
             >
               <Maximize size={16} />
             </button>
@@ -1049,7 +1048,7 @@ export function VisualEditor() {
                   onClick={() => setActiveTab('animate')}
                   className={`flex-1 py-5 text-[10px] font-bold uppercase tracking-widest transition-colors ${activeTab === 'animate' ? 'text-accent border-b-2 border-accent' : 'text-slate-500 hover:text-white'}`}
                 >
-                  Animate
+                  Animar
                 </button>
               </div>
 
@@ -1057,7 +1056,7 @@ export function VisualEditor() {
                 {!selectedElement && (
                   <div className="space-y-6">
                     <h3 className="text-[10px] font-bold text-white flex items-center gap-2 uppercase tracking-widest">
-                      <span className="text-accent">⚙</span> Slide Settings
+                      <span className="text-accent">⚙</span> Configurações do Slide
                     </h3>
                     <button
                       onClick={toggleSlideMode}
@@ -1073,7 +1072,7 @@ export function VisualEditor() {
                     {/* Position & Size */}
                     <div className="space-y-4">
                       <h3 className="text-[10px] font-bold text-white flex items-center gap-2 uppercase tracking-widest">
-                        <span className="text-accent">#</span> Position &amp; Size
+                        <span className="text-accent">#</span> Posição &amp; Tamanho
                       </h3>
                       <div className="grid grid-cols-2 gap-4">
                         <div>
@@ -1095,7 +1094,7 @@ export function VisualEditor() {
                           />
                         </div>
                         <div>
-                          <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Width</label>
+                          <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Largura</label>
                           <input
                             type="number"
                             value={selectedElement?.width}
@@ -1104,7 +1103,7 @@ export function VisualEditor() {
                           />
                         </div>
                         <div>
-                          <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Height</label>
+                          <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Altura</label>
                           <input
                             type="number"
                             value={selectedElement?.height}
@@ -1119,10 +1118,10 @@ export function VisualEditor() {
                     {selectedElement.type === 'text' && (
                       <div className="space-y-4">
                         <h3 className="text-[10px] font-bold text-white flex items-center gap-2 uppercase tracking-widest border-t border-border-color pt-6">
-                          <span className="text-accent">A</span> Typography
+                          <span className="text-accent">A</span> Tipografia
                         </h3>
                         <div>
-                          <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Content</label>
+                          <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Conteúdo</label>
                           <textarea
                             value={selectedElement?.content}
                             onChange={(e) => updateElement(activeSlideIndex, selectedElement?.id, { content: e.target.value })}
@@ -1132,7 +1131,7 @@ export function VisualEditor() {
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                           <div>
-                            <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Size</label>
+                            <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Tamanho</label>
                             <input
                               type="number"
                               value={selectedElement?.style?.fontSize}
@@ -1141,7 +1140,7 @@ export function VisualEditor() {
                             />
                           </div>
                           <div>
-                            <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Color</label>
+                            <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Cor</label>
                             <input
                               type="color"
                               value={selectedElement?.style?.color || 'currentColor'}
@@ -1162,7 +1161,7 @@ export function VisualEditor() {
                     {selectedElement.type === 'image' && (
                       <div className="space-y-4">
                         <h3 className="text-[10px] font-bold text-white flex items-center gap-2 uppercase tracking-widest border-t border-border-color pt-6">
-                          <span className="text-accent">IM</span> Image Settings
+                          <span className="text-accent">IM</span> Configurações de Imagem
                         </h3>
                         <div>
                           <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">URL da Imagem</label>
@@ -1189,11 +1188,11 @@ export function VisualEditor() {
                     {selectedElement.type === 'shape' && (
                       <div className="space-y-4">
                         <h3 className="text-[10px] font-bold text-white flex items-center gap-2 uppercase tracking-widest border-t border-border-color pt-6">
-                          <span className="text-accent">SH</span> Shape Style
+                          <span className="text-accent">SH</span> Estilo da Forma
                         </h3>
                         <div className="grid grid-cols-2 gap-4">
                           <div>
-                            <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Fill</label>
+                            <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Preenchimento</label>
                             <input
                               type="color"
                               value={selectedElement?.style?.backgroundColor || 'currentColor'}
@@ -1202,7 +1201,7 @@ export function VisualEditor() {
                             />
                           </div>
                           <div>
-                            <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Opacity</label>
+                            <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Opacidade</label>
                             <input
                               type="number"
                               step="0.1"
@@ -1230,14 +1229,14 @@ export function VisualEditor() {
                     {selectedElement.type === 'html' && (
                       <div className="space-y-4">
                         <h3 className="text-[10px] font-bold text-white flex items-center gap-2 uppercase tracking-widest border-t border-border-color pt-6">
-                          <span className="text-accent"><Settings size={12} /></span> HTML Editor
+                          <span className="text-accent"><Settings size={12} /></span> Editor HTML
                         </h3>
                         <div className="flex gap-2">
                           <button
                             onClick={() => updateElement(activeSlideIndex, selectedElement.id, { x: 0, y: 0, width: 900, height: 506 })}
                             className="flex-1 py-2 px-3 rounded-lg bg-accent/10 border border-accent/30 text-accent text-[10px] font-bold hover:bg-accent/20 transition-all uppercase tracking-widest shadow-[0_0_10px_rgba(0,246,255,0.1)]"
                           >
-                            Fill Canvas (Reset Pos)
+                            Preencher Slide (Reset Pos)
                           </button>
                         </div>
                         <div>
@@ -1253,7 +1252,7 @@ export function VisualEditor() {
                         </div>
                         <div>
                           <div className="flex justify-between items-center mb-2">
-                            <label className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Custom Code</label>
+                            <label className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Código Customizado</label>
                             <button
                               onClick={() => updateElement(activeSlideIndex, selectedElement.id, { content: cleanHTML(selectedElement.content) })}
                               className="text-[10px] text-accent font-bold hover:underline"
@@ -1279,28 +1278,28 @@ export function VisualEditor() {
                       <h3 className="text-[10px] font-bold text-white flex items-center gap-2 uppercase tracking-widest">
                         <span className="text-accent">
                           <Play size={12} fill="currentColor" />
-                        </span> Entrance Animation
+                        </span> Animação de Entrada
                       </h3>
 
                       <div>
-                        <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Animation Type</label>
+                        <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Tipo de Animação</label>
                         <select
                           value={selectedElement.animation.type}
                           onChange={(e) => updateElement(activeSlideIndex, selectedElement.id, { animation: { ...selectedElement.animation, type: e.target.value as any } })}
                           className="w-full bg-bg-tertiary border border-border-color rounded-xl px-4 py-3 text-sm text-white focus:outline-none appearance-none"
                         >
-                          <option value="none">None</option>
-                          <option value="fadeIn">Fade In</option>
-                          <option value="slideUp">Slide Up</option>
-                          <option value="slideLeft">Slide Left</option>
-                          <option value="zoomIn">Zoom In</option>
-                          <option value="rotateIn">Rotate In</option>
+                          <option value="none">Nenhuma</option>
+                          <option value="fadeIn">Esmaecer</option>
+                          <option value="slideUp">Subir</option>
+                          <option value="slideLeft">Deslizar Esquerda</option>
+                          <option value="zoomIn">Aproximar</option>
+                          <option value="rotateIn">Girar</option>
                         </select>
                       </div>
 
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Duration (ms)</label>
+                          <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Duração (ms)</label>
                           <input
                             type="number"
                             step="100"
@@ -1310,7 +1309,7 @@ export function VisualEditor() {
                           />
                         </div>
                         <div>
-                          <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Delay (ms)</label>
+                          <label className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 block font-bold">Atraso (ms)</label>
                           <input
                             type="number"
                             step="100"
@@ -1342,7 +1341,7 @@ export function VisualEditor() {
                 {!selectedElement && (
                   <div className="h-40 flex flex-col items-center justify-center text-slate-500 text-xs text-center px-4 italic space-y-4">
                     <Settings size={32} className="opacity-20 animate-spin-slow" />
-                    <span>Select an element to edit its properties</span>
+                    <span>Selecione um elemento para editar suas propriedades</span>
                   </div>
                 )}
               </div>
@@ -1372,14 +1371,14 @@ export function VisualEditor() {
                     disabled={!selectedElement}
                     className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border border-border-color bg-bg-tertiary/50 text-white hover:bg-red-500/10 hover:text-red-400 hover:border-red-500/30 transition-colors text-xs font-bold disabled:opacity-20 disabled:cursor-not-allowed"
                   >
-                    <Trash2 size={16} /> Delete
+                    <Trash2 size={16} /> Excluir
                   </button>
                   <button
                     onClick={() => selectedElement && duplicateElement(activeSlideIndex, selectedElement.id)}
                     disabled={!selectedElement}
                     className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border border-border-color bg-bg-tertiary/50 text-white hover:bg-bg-tertiary transition-colors text-xs font-bold disabled:opacity-20 disabled:cursor-not-allowed"
                   >
-                    <Copy size={16} /> Duplicate
+                    <Copy size={16} /> Duplicar
                   </button>
                 </div>
               </div>

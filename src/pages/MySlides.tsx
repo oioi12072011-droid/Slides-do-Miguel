@@ -60,7 +60,7 @@ export function MySlides() {
             <Sidebar />
             <main className="flex-1 flex flex-col h-full overflow-y-auto custom-scrollbar">
                 <Header
-                    title="My Slides"
+                    title="Meus Slides"
                     searchValue={searchQuery}
                     onSearchChange={(val) => { setSearchQuery(val); setPage(1); }}
                 />
@@ -69,7 +69,7 @@ export function MySlides() {
                     {/* Title + Create Button */}
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                         <div>
-                            <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-text-primary uppercase">My Slides</h1>
+                            <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-text-primary uppercase">Meus Slides</h1>
                             <p className="text-text-secondary mt-2 text-lg">Gerencie suas apresentações de alta performance</p>
                         </div>
                         {isAdmin && (

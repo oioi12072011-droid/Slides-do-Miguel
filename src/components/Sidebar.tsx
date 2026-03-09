@@ -10,10 +10,10 @@ export function Sidebar({ isAdmin = false }: { isAdmin?: boolean }) {
   const { user, logout } = useAuth();
 
   const navItems = [
-    { icon: <Home size={20} />, label: 'Home', path: '/', roles: ['admin', 'editor', 'viewer'] },
-    { icon: <LayoutGrid size={20} />, label: 'My Slides', path: '/my-slides', roles: ['admin', 'editor'] },
-    { icon: <Folder size={20} />, label: 'Assets', path: '/assets', roles: ['admin', 'editor'] },
-    { icon: <Users size={20} />, label: 'Teams', path: '/teams', roles: ['admin'] },
+    { icon: <Home size={20} />, label: 'Início', path: '/', roles: ['admin', 'editor', 'viewer'] },
+    { icon: <LayoutGrid size={20} />, label: 'Meus Slides', path: '/my-slides', roles: ['admin', 'editor'] },
+    { icon: <Folder size={20} />, label: 'Arquivos', path: '/assets', roles: ['admin', 'editor'] },
+    { icon: <Users size={20} />, label: 'Equipes', path: '/teams', roles: ['admin'] },
   ];
 
   const currentRole = user?.role || 'viewer';
@@ -48,7 +48,7 @@ export function Sidebar({ isAdmin = false }: { isAdmin?: boolean }) {
           <h1 className="text-white font-bold text-lg leading-tight tracking-tight">
             Slides do <span className="text-accent">Miguel</span>
           </h1>
-          {isAdmin && <span className="text-slate-400 text-[10px] uppercase tracking-widest font-bold">Admin Panel</span>}
+          {isAdmin && <span className="text-slate-400 text-[10px] uppercase tracking-widest font-bold">Painel de Controle</span>}
         </div>
       </div>
 
@@ -118,7 +118,7 @@ export function Sidebar({ isAdmin = false }: { isAdmin?: boolean }) {
               }`}
           >
             <Settings size={20} />
-            <span>Settings</span>
+            <span>Configurações</span>
           </Link>
         ) : (
           <div
@@ -133,11 +133,11 @@ export function Sidebar({ isAdmin = false }: { isAdmin?: boolean }) {
 
         {isAdminUser && (
           <div className="bg-bg-tertiary rounded-xl p-4 animate-fadeIn mt-4">
-            <h3 className="text-accent text-[10px] font-bold tracking-widest uppercase mb-3">Storage Usage</h3>
+            <h3 className="text-accent text-[10px] font-bold tracking-widest uppercase mb-3">Uso de Armazenamento</h3>
             <div className="w-full h-1.5 bg-bg-secondary rounded-full overflow-hidden mb-2">
               <div className="h-full bg-accent w-[60%] rounded-full shadow-[0_0_10px_var(--accent)]"></div>
             </div>
-            <p className="text-text-secondary text-xs">1.2GB of 2GB used</p>
+            <p className="text-text-secondary text-xs">1.2GB de 2GB usados</p>
           </div>
         )}
       </div>

@@ -22,7 +22,7 @@ export function Header({
           <Search className="absolute left-4 text-slate-400" size={20} />
           <input
             type="text"
-            placeholder="Search presentations, assets..."
+            placeholder="Buscar apresentações, arquivos..."
             value={searchValue || ''}
             onChange={(e) => onSearchChange?.(e.target.value)}
             className="w-full h-full bg-transparent pl-12 pr-4 text-white placeholder-slate-500 focus:outline-none text-sm font-medium"

@@ -111,7 +111,7 @@ export function Assets() {
             <Sidebar />
             <main className="flex-1 flex flex-col h-full overflow-y-auto custom-scrollbar">
                 <Header
-                    title="Assets"
+                    title="Arquivos"
                     searchValue={searchQuery}
                     onSearchChange={setSearchQuery}
                 />
@@ -120,7 +120,7 @@ export function Assets() {
                     {/* Header */}
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                         <div>
-                            <h1 className="text-4xl font-bold tracking-tight text-accent">Assets</h1>
+                            <h1 className="text-4xl font-bold tracking-tight text-accent">Arquivos</h1>
                             <p className="text-text-secondary mt-2">
                                 Suas imagens e vídeos pessoais para as apresentações.
                             </p>
@@ -139,7 +139,7 @@ export function Assets() {
                                 className="bg-accent hover:brightness-110 text-bg-primary font-bold px-6 py-3 rounded-xl flex items-center gap-2 transition-all shadow-[0_0_15px_var(--accent)]"
                             >
                                 <Upload size={18} />
-                                Upload
+                                Enviar
                             </button>
                         </div>
                     </div>
